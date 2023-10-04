@@ -1,0 +1,3 @@
+//MYSPOTIFYACCOUNT
+export const CLIENT_ID = '0ec9df40df8b414487c28559621d574e',
+             CLIENT_SECRET = '56110e3fc8ae4f12b54bdca52d546250';

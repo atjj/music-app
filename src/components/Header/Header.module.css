@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+.header__list{
+    list-style-type: none;
+    display: flex;
+    margin-left: 0;
+    padding: 0;
+}
+
+.header__list li {
+    margin-left: 30px;
+}
+
+.header__list  a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(21, 20, 20);
+    transition: .2s;
+}
+
+.header__list li :global(a.active){
+    color:red;
+    border-bottom: 3px solid red;
+}
