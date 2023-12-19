@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './ArtistList.module.css';
 import { getImg } from '../../../functions/functions';
-import musicnote from '../icons/musical-note.png'
+import musicnote from '../../../assets/icons/musical-note.png'
 const ArtistList = ({artists}) =>{
 
     return(

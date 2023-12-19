@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ArtistList from '../ArtistList/ArtistList'
 import styles from './ArtistsPage.module.css';
-import searchIcon from '../icons/search.png';
+import searchIcon from '../../../assets/icons/search.png';
 import SearchPanel from '../SearchPanel/SearchPanel';
 import ErrorPage from '../../ErrorPage/ErrorPage';
 import { getSearchData } from '../../../getDataFunctions/getDataFunctions';
@@ -15,6 +15,7 @@ const ArtistPage = ({access_token}) => {
      const [searchInput,setSearchInput] = useState('');
      const [error,setError] = useState(false);
      const [artists,setArtists] = useState('');
+     
      
 
      useEffect(()=>{
@@ -54,6 +55,12 @@ const ArtistPage = ({access_token}) => {
         sessionStorage.setItem('artist',searchInput);
      }
 
+     const changeInput = (e) =>{
+          setSearchInput(e.target.value)
+      }
+
+
+
 
      const view = artists ? <ArtistList artists = {artists}/> : null;
      const withErrorView = error ? <ErrorPage/> : view;
@@ -61,7 +68,7 @@ const ArtistPage = ({access_token}) => {
      return(
       
         <div className= {styles.container}>
-            <SearchPanel search={search}  searchIcon={searchIcon} setSearchInput={setSearchInput}/>
+            <SearchPanel search={search}  searchIcon={searchIcon} changeInput={changeInput}/>
             {withErrorView}
         </div>
      )

@@ -80,23 +80,3 @@ export const getSearchData = async (accessToken,artist) => {
 
 
 
-export const getGenres = async (accessToken) => {
-  try {
-    const res = await fetch(`https://api.spotify.com/v1/recommendations/available-genre-seeds`, {
-      headers: {
-        'Authorization': `Bearer ${accessToken}`
-      }
-    });
-
-    if (!res.ok) {
-      // Если ответ от сервера не ок, выбрасываем ошибку
-      throw new Error(`Ошибка HTTP: ${res.status}`);
-    }
-
-    return res.json();
-  } catch (error) {
-    // Обработка ошибок и вывод деталей в консоль
-    console.error('Произошла ошибка при получении жанров:', error.message);
-    throw error; // Пробрасываем ошибку дальше
-  }
-};
